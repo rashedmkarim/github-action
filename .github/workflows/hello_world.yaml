@@ -1,0 +1,18 @@
+name: Hello Git Actions
+on: # When will it 🔥 a :trigger
+  push: # On push it will fire a trigger
+    branches: # which branches will it be fired a trigger
+      - main # On Main branch it will fire a trigger
+  workflow_dispatch:
+jobs: # 
+  build_and_test:
+    runs-on: ubuntu-20.04
+    steps: # Steps to go through
+      - name: Clone Code # Name of the step
+        uses: actions/checkout@v2 # What it does
+      - name: Compile Java File # Name of the step
+        shell: bash # What shell to use
+        run: javac Main.java # shell command to compile java file
+      - name: Execute Java Program # Name of the step
+        shell: bash # What shell to use
+        run: java Main # shell command to compile java file
